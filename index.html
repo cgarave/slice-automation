@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; width: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body style="height: 100%; width: 100%;" class="bg-neutral-900 flex flex-col">
+    <nav class="flex flex-row justify-between text-white text-sm font-semibold p-4 bg-neutral-800">
+        <ul class="flex flex-row">
+            <li>
+                <input type="text" placeholder="text">
+            </li>
+            <li>
+                <select name="banner-type" id=""></select>
+            </li>
+            <li>
+                <select name="requestor" id=""></select>
+            </li>
+            <li>
+                <select name="link" id=""></select>
+            </li>
+            <li>
+                <select name="button" id=""></select>
+            </li>
+            <li>
+                <select name="span" id=""></select>
+            </li>
+        </ul>
+        <ul class="flex flex-row">
+            <li>
+                <button>CN</button>
+            </li>
+            <li>
+                <button>VN</button>
+            </li>
+            <li>
+                <button>TH</button>
+            </li>
+            <li>
+                <button>KR</button>
+            </li>
+            <li>
+                <button>ID</button>
+            </li>
+            <li>
+                <button>KH</button>
+            </li>
+            <li>
+                <button>JP</button>
+            </li>
+            <li>
+                <button>IN</button>
+            </li>
+        </ul>
+        <button>imp</button>
+    </nav>
+    <div class="flex flex-row h-full w-full">
+        <div class="flex flex-col w-1/2">
+            <div class="h-full border border-gray-600" id="preview-container">
+                <div class="w-2/3">
+                    <img src="https://doc.188contents.com/taptap-content/images/banners/generic/2025-08-Aug/L1SEASONOPENER-0825/2844x800-L1SEASONOPENER-0825.webp" alt="">
+                </div>
+            </div>
+            <div class="h-1/2 border border-gray-600" id="input-container"></div>
+        </div>
+        <div class="flex flex-col w-1/2">
+            <div class="h-1/2 border border-gray-600" id="en-code-container"></div>
+            <div class="h-1/2 border border-gray-600" id="local-code-container"></div>
+        </div>
+    </div>
+</body>
+<script src="slice.js"></script>
+</html>
