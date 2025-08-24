@@ -11,155 +11,123 @@
     <nav class="flex flex-row justify-between text-sm font-semibold p-4 bg-neutral-800">
         <ul class="flex flex-row gap-x-2">
             <li>
-                <input type="text" placeholder="Promocode" class="rounded-[4px] p-2 h-10 w-80 outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-            </li>
-            <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
-                <select id="banner-type" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
-                    <option value="">Generic</option>
-                    <option value="">Promotion</option>
-                    <option value="">Video Banner</option>
-                    <option value="">Match Banner</option>
-                    <option value="">Overlay Generic Banner</option>
-                    <option value="">Overlay Promotion Banner</option>
-                    <option value="">Subscreen Generic Banner</option>
-                    <option value="">Subscreen Promotion Banner</option>
-                    <option value="">Subscreen Video Banner</option>
-                </select>
+                <input id="promocode" type="text" placeholder="Promocode" class="rounded-[4px] p-2 h-10 w-80 outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
             </li>
             <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
                 <select id="slice-type" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
-                    <option value="">Multi Image</option>
-                    <option value="">Clickable Image</option>
-                    <option value="">Two Links in an Image</option>
-                    <option value="">Two Buttons</option>
-                    <option value="">No Button</option>
+                    <option value="#">Slice Type</option>
+                    <option value="HB">Hero Banner</option>
+                    <option value="HVB">Hero Video Banner</option>
+                    <option value="RHB">Regional Hero Banner</option>
+                    <option value="GL">Game Launcher</option>
+                    <option value="OB">Overlay Banner</option>
+                    <option value="SIB">Subscreen Image Banner</option>
+                    <option value="SVB">Subscreen Video Banner</option>
+                    <option value="CI">Clickable Image</option>
+                    <option value="TL">Two Links in an Image</option>
+                    <option value="TB">Two Buttons</option>
+                    <option value="NB">No Button</option>
+                    <option value="MB1">Match Banner Single Odds</option>
+                    <option value="MB2">Match Banner Double Odds</option>
+                    <option value="MB3">Match Banner Single Match</option>
+                    <option value="FCB">FC Bayern Munich</option>
+                    <option value="F1">F1</option>
                 </select>
             </li>
             <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
-                <select id="requestor" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
-                    <option value="">Product</option>
-                    <option value="">Marketing</option>
-                    <option value="">Sponsorship</option>
+                <select id="banner-type" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
+                    <option value="#">Banner Type</option>
+                    <option value="generic">Generic</option>
+                    <option value="promotion">Promotion</option>
                 </select>
             </li>
             <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
-                <select id="cta-link" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
-                    <option value="">Sports</option>
-                    <option value="">Casino</option>
-                    <option value="">Live Casino</option>
-                    <option value="">Chess</option>
-                    <option value="">Lotto</option>
-                    <option value="">TNC Promotion</option>
+                <select id="requestor-list" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
+                    <option value="#">Requestor</option>
+                    <option value="PD">Product</option>
+                    <option value="MK">Marketing</option>
+                    <option value="SPN">Sponsorship</option>
                 </select>
             </li>
             <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
-                <select id="cta-button" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
-                    <option value="">MORE INFO</option>
-                    <option value="">BET NOW</option>
-                    <option value="">PLAY NOW</option>
+                <select id="cta-link-list" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
+                    <option value="#">Button Link</option>
+                    <option value="ODDS">Sports</option>
+                    <option value="ESPORTS">Esports</option>
+                    <option value="CSN">Casino</option>
+                    <option value="LCSN">Live Casino</option>
+                    <option value="CHESS">Chess</option>
+                    <option value="LOTTO">Lotto</option>
+                    <option value="DEPOSIT">Deposit</option>
+                    <option value="STATIC">Static</option>
+                    <option value="PARTNER">Partner</option>
+                    <option value="TNC">TNC Promotion</option>
+                </select>
+            </li>
+            <li class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
+                <select id="cta-text-list" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
+                    <option value="#">Button Text</option>
+                    <option value="MORE INFO">MORE INFO</option>
+                    <option value="PLAY NOW">PLAY NOW</option>
+                    <option value="VIEW ODDS">VIEW ODDS</option>
+                    <option value="BET NOW">BET NOW</option>
+                    <option value="JOIN NOW">JOIN NOW</option>
+                    <option value="TRY NOW">TRY NOW</option>
+                    <option value="DEPOSIT NOW">DEPOSIT NOW</option>
+                    <option value="WATCH NOW">WATCH NOW</option>
                 </select>
             </li>
         </ul>
         <ul class="flex flex-row gap-x-2">
             <li>
-                <button  class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">CN</button>
+                <button class="region outline bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">CN</button>
             </li>
             <li>
-                <button  class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">VN</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">VN</button>
             </li>
             <li>
-                <button  class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">TH</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">TH</button>
             </li>
             <li>
-                <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">KR</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">KR</button>
             </li>
             <li>
-                <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">ID</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">ID</button>
             </li>
             <li>
-                <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">KH</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">KH</button>
             </li>
             <li>
-                <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">JP</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">JP</button>
             </li>
             <li>
-                <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">IN</button>
+                <button class="region bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]">IN</button>
             </li>
         </ul>
-        <button class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer outline outline-[#ff9200]">Import</button>
+        <button id="import-button" class="bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer outline outline-[#ff9200]">Import</button>
     </nav>
     <div class="flex flex-row h-full w-full">
         <div class="flex flex-col w-1/2 p-2 gap-y-2">
             <div class="h-full flex flex-col gap-y-2" id="desktop-preview-container">
-                <div id="desktop-en-image-container" class="h-fit relative rounded-md overflow-hidden">
-                    <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black to-70%">
-                        <div class="flex flex-col gap-y-1">
-                            <h3 class="text-[14px] font-semibold">Hello World</h3>
-                            <p class="text-neutral-400 text-[10px]">This is description</p>
-                            <p class="text-neutral-400 text-[6px]">Terms and Conditions Apply.</p>
-                        </div>
-                        <button class="p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">MORE INFO</button>
-                    </div>
-                    <img src="https://doc.188contents.com/taptap-content/images/banners/generic/2025-08-Aug/L1SEASONOPENER-0825/2844x800-L1SEASONOPENER-0825.webp" alt="">
-                </div>
-                <div id="desktop-local-image-container" class="h-fit relative rounded-md overflow-hidden">
-                    <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black to-70%">
-                        <div class="flex flex-col gap-y-1">
-                            <h3 class="text-[14px] font-semibold">Hello World</h3>
-                            <p class="text-neutral-400 text-[10px]">This is description</p>
-                            <p class="text-neutral-400 text-[6px]">Terms and Conditions Apply.</p>
-                        </div>
-                        <button class="p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">MORE INFO</button>
-                    </div>
-                    <img src="https://doc.188contents.com/taptap-content/images/banners/generic/2025-08-Aug/L1SEASONOPENER-0825/2844x800-L1SEASONOPENER-0825.webp" alt="">
-                </div>
+                
             </div>
             <div class="h-full flex flex-row gap-x-2" id="mobile-preview-container">
-                <div id="mobile-en-image-container" class="h-fit relative rounded-md overflow-hidden">
-                    <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-black opacity-80">
-                        <div class="flex flex-col gap-y-1">
-                            <h3 class="text-[14px] font-semibold">Hello World</h3>
-                            <p class="text-neutral-400 text-[10px]">This is description</p>
-                            <p class="text-neutral-400 text-[6px]">Terms and Conditions Apply.</p>
-                        </div>
-                    </div>
-                    <img src="https://doc.188contents.com/taptap-content/images/banners/generic/2025-08-Aug/L1SEASONOPENER-0825/1280x720-L1SEASONOPENER-0825.webp" alt="">
-                </div>
-                <div id="mobile-local-image-container" class="h-fit relative rounded-md overflow-hidden">
-                    <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-black opacity-80">
-                        <div class="flex flex-col gap-y-1">
-                            <h3 class="text-[14px] font-semibold">Hello World</h3>
-                            <p class="text-neutral-400 text-[10px]">This is description</p>
-                            <p class="text-neutral-400 text-[6px]">Terms and Conditions Apply.</p>
-                        </div>
-                    </div>
-                    <img src="https://doc.188contents.com/taptap-content/images/banners/generic/2025-08-Aug/L1SEASONOPENER-0825/1280x720-L1SEASONOPENER-0825.webp" alt="">
-                </div>
+                
             </div>
         </div>
-        <div class="flex flex-col w-1/2 p-2">
-            <div class="h-full flex flex-col gap-y-2 border border-gray-600" id="input-container">
-                <div class="flex flex-row gap-x-2">
-                    <input type="text" placeholder="EN-Title" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    <input type="text" placeholder="Localized-Title" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                </div>
-                <div class="flex flex-row gap-x-2">
-                    <textarea id="" placeholder="EN-Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
-                    <textarea id="" placeholder="Localized-Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
-                </div>
-                <div class="flex flex-row gap-x-2">
-                    <input type="text" placeholder="cta-link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    <input type="text" placeholder="cta-altlink" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                </div>
+        <div class="flex flex-col w-1/2 gap-y-2 p-2">
+            <div class="h-fit flex flex-col gap-y-2" id="input-container"></div>
+            <div class="flex flex-row gap-x-2">
+                <input id="advert-name" type="text" placeholder="advert-name" class="rounded-[4px] p-2 h-10 w-fit outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" disabled>
+                <button id="channel-planner" class="bg-neutral-800 rounded-[4px] p-2 font-medium text-xs text-white cursor-pointer border border-[#ff9200]">Open Channel Planner</button>
+                <button id="create-advert" class="bg-neutral-800 rounded-[4px] p-2 font-medium text-xs text-white cursor-pointer border border-[#ff9200]">Create Advert</button>
             </div>
-            <div class="h-full border border-gray-600" id="en-code-container">
-                <textarea id="" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
-            </div>
-            <div class="h-full border border-gray-600" id="local-code-container">
-                <textarea id="" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
-            </div>
+            <textarea id="en-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
+            <textarea id="local-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
         </div>
     </div>
 </body>
+<script src="inputFieldList.js"></script>
+<script src="updateList.js"></script>
 <script src="slice.js"></script>
 </html>
