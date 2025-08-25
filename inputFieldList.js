@@ -211,3 +211,15 @@ const regionInputFieldList = {
                 </div>
             </div>`,
 }
+
+const localizedOdds = {
+    EN: 'The odds may vary from time to time',
+    CN: '赔率实时变动',
+    VN: 'Tỉ lệ cược có thể thay đổi theo thời gian.',
+    TH: 'อัตราการต่อรองเปลี่ยนแปลงได้ตลอดเวลา',
+    KR: '배당률은 경기 상황에 따라 수시로 변동될수 있습니다',
+    ID: 'Odds dapat berubah sewaktu-waktu',
+    KH: 'ហាងឆេងអាចប្រែប្រួលតាមពេលវេលាជាក់ស្តែង',
+    JP: 'オッズは変動することがありますので、ご注意ください。',
+    IN: '',
+}
