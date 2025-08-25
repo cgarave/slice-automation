@@ -42,14 +42,14 @@ ctaTextList.addEventListener('change', () => {
 //Select region button listener
 const regionList = document.querySelectorAll('.region');
 regionList.forEach(region => {
-    region.id = region.innerHTML; //assigns ID to every region using its own inner text
+    region.id = region.innerHTML; //assigns ID to every region button using its own inner text
     
     region.addEventListener('click', (e) => {
         regionList.forEach(r => r.classList.remove('outline')); //removes all button outlines before adding outline to the clicked button
         region.classList.add('outline');
 
-        //currentRegionSelected = e.target.id //assigns region id to be used for cp and create advert button
-        findSelectedRegion();
+        //findSelectedRegion();
+
         controlInputs(sliceTypeList.value, e.target.id);
     })
 })
@@ -73,216 +73,124 @@ function controlInputs(sliceType, region) {
 
         case 'HB':
             //inputContainer.innerHTML = regionInputFieldList[region];
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
-            document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
-            document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
-            document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');}); //hides all input fields
+            document.getElementById(region+'-container').classList.remove('hidden'); //show only input fields for the selected region
+            document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')}) //show cta link input
+            document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')}) //hides two links input
             controlAdvertName('H', region);
             break;
         
         case 'HVB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
-            controlAdvertName('H', region);
+            controlAdvertName('VB', region);
             break;
 
         case 'RHB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-            
             controlAdvertName('H', region);
             break;
 
         case 'GL':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            document.getElementById('game-code-input').classList.remove('hidden');
-
-            //hides cta link input
+            document.getElementById('game-code-input').classList.remove('hidden'); //show gamecode input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('H', region);
             break;
 
         case 'OB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('OB', region);
             break;
 
         case 'SIB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('MD', region);
             break;
+
         case 'SVB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('MD', region);
             break;
+
         case 'CI':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('H', region);
             break;
+
         case 'TL':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
-            document.querySelectorAll('.tl').forEach(tl => {tl.classList.remove('hidden')})
-
+            document.querySelectorAll('.tl').forEach(tl => {tl.classList.remove('hidden')}) //show two link input
             controlAdvertName('H', region);
             break;
+
         case 'TB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.remove('hidden')})
-
             controlAdvertName('H', region);
             break;
+
         case 'NB':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
-            
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('H', region);
             break;
+
         case 'MB1':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
             document.getElementById('mb-input-container').classList.remove('hidden');
-
-            //hides general input
             document.querySelectorAll('.general').forEach(general => {general.classList.add('hidden')})
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('MB', region);
             break;
+
         case 'MB2':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
             document.getElementById('mb-input-container').classList.remove('hidden');
-
-            //hides general input
             document.querySelectorAll('.general').forEach(general => {general.classList.add('hidden')})
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('MB', region);
             break;
+
         case 'MB3':
-            Array.from(inputContainer.children).forEach(child => {
-                child.classList.add('hidden');
-            });
-
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
             document.getElementById('mb-input-container').classList.remove('hidden');
-
-            //hides general input
             document.querySelectorAll('.general').forEach(general => {general.classList.add('hidden')})
-            //hides cta link input
             document.querySelectorAll('.cta').forEach(cta => {cta.classList.add('hidden')})
-            //hides two links input
             document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
-
             controlAdvertName('MB', region);
             break;
+            
         case 'FCB':
             break;
         case 'F1':
@@ -366,3 +274,84 @@ function findSelectedRegion() {
     });
 }
 findSelectedRegion();
+
+function handleInputs() {
+
+    //List of input fields
+    let encnTitle = document.getElementById('encn-title-input');
+    let zhcnTitle = document.getElementById('zhcn-title-input');
+    let encnDescription = document.getElementById('encn-desc-input');
+    let zhcnDescription = document.getElementById('zhcn-desc-input');
+    let cnLink = document.getElementById('cn-link-input');
+    let cnAltLink = document.getElementById('cn-alt-link-input');
+    let cnLink1 = document.getElementById('cn-link-1-input');
+    let cnLink2 = document.getElementById('cn-link-2-input');
+
+    let envnTitle = document.getElementById('envn-title-input');
+    let vivnTitle = document.getElementById('vivn-title-input');
+    let envnDescription = document.getElementById('envn-desc-input');
+    let vivnDescription = document.getElementById('vivn-desc-input');
+    let vnLink = document.getElementById('vn-link-input');
+    let vnAltLink = document.getElementById('vn-alt-link-input');
+    let vnLink1 = document.getElementById('vn-link-1-input');
+    let vnLink2 = document.getElementById('vn-link-2-input');
+
+    let enthTitle = document.getElementById('enth-title-input');
+    let ththTitle = document.getElementById('thth-title-input');
+    let enthDescription = document.getElementById('enth-desc-input');
+    let ththDescription = document.getElementById('thth-desc-input');
+    let thLink = document.getElementById('th-link-input');
+    let thAltLink = document.getElementById('th-alt-link-input');
+    let thLink1 = document.getElementById('th-link-1-input');
+    let thLink2 = document.getElementById('th-link-2-input');
+
+    let enkrTitle = document.getElementById('enkr-title-input');
+    let kokrTitle = document.getElementById('kokr-title-input');
+    let enkrDescription = document.getElementById('enkr-desc-input');
+    let kokrDescription = document.getElementById('kokr-desc-input');
+    let krLink = document.getElementById('kr-link-input');
+    let krAltLink = document.getElementById('kr-alt-link-input');
+    let krLink1 = document.getElementById('kr-link-1-input');
+    let krLink2 = document.getElementById('kr-link-2-input');
+
+    let enidTitle = document.getElementById('enid-title-input');
+    let ididTitle = document.getElementById('idid-title-input');
+    let enidDescription = document.getElementById('enid-desc-input');
+    let ididDescription = document.getElementById('idid-desc-input');
+    let idLink = document.getElementById('id-link-input');
+    let idAltLink = document.getElementById('id-alt-link-input');
+    let idLink1 = document.getElementById('id-link-1-input');
+    let idLink2 = document.getElementById('id-link-2-input');
+
+    let enkhTitle = document.getElementById('enkh-title-input');
+    let kmkhTitle = document.getElementById('kmkh-title-input');
+    let enkhDescription = document.getElementById('enkh-desc-input');
+    let kmkhDescription = document.getElementById('kmkh-desc-input');
+    let khLink = document.getElementById('kh-link-input');
+    let khAltLink = document.getElementById('kh-alt-link-input');
+    let khLink1 = document.getElementById('kh-link-1-input');
+    let khLink2 = document.getElementById('kh-link-2-input');
+
+    let enjpTitle = document.getElementById('enjp-title-input');
+    let jajpTitle = document.getElementById('jajp-title-input');
+    let enjpDescription = document.getElementById('enjp-desc-input');
+    let jajpDescription = document.getElementById('jajp-desc-input');
+    let jpLink = document.getElementById('jp-link-input');
+    let jpAltLink = document.getElementById('jp-alt-link-input');
+    let jpLink1 = document.getElementById('jp-link-1-input');
+    let jpLink2 = document.getElementById('jp-link-2-input');
+
+    let eninTitle = document.getElementById('enin-title-input');
+    let hiinTitle = document.getElementById('hiin-title-input');
+    let eninDescription = document.getElementById('enin-desc-input');
+    let hiinDescription = document.getElementById('hiin-desc-input');
+    let inLink = document.getElementById('in-link-input');
+    let inAltLink = document.getElementById('in-alt-link-input');
+    let inLink1 = document.getElementById('in-link-1-input');
+    let inLink2 = document.getElementById('in-link-2-input');
+
+    document.getElementById('encn-title-input').addEventListener('input', () => {
+        document.getElementById('en-desktop-title').textContent = document.getElementById('encn-title-input').value
+    })
+    document.getElementById('zhcn-title-input')
+}

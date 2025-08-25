@@ -1,5 +1,5 @@
 let desktopBanner = `<div id="desktop-en-image-container" class="h-fit relative rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black to-70%">
+                        <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black from-10% to-100%">
                             <div class="flex flex-col gap-y-1">
                                 <h3 id="en-desktop-title" class="text-[14px] font-semibold">This is english title</h3>
                                 <p id="en-desktop-desc" class="text-neutral-400 text-[10px]">This is english description</p>
@@ -10,7 +10,7 @@ let desktopBanner = `<div id="desktop-en-image-container" class="h-fit relative 
                         <img id="en-desktop-img" src="" alt="">
                     </div>
                     <div id="desktop-local-image-container" class="h-fit relative rounded-md overflow-hidden">
-                        <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black to-70%">
+                        <div class="absolute bottom-0 p-3 w-full flex flex-row justify-between items-center bg-linear-to-t from-black from-10% to-100%">
                             <div class="flex flex-col gap-y-1">
                                 <h3 id="local-title" class="text-[14px] font-semibold">This is localized title</h3>
                                 <p id="local-desc" class="text-neutral-400 text-[10px]">This is localized description</p>
