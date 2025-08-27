@@ -221,5 +221,17 @@ const localizedOdds = {
     ID: 'Odds dapat berubah sewaktu-waktu',
     KH: 'ហាងឆេងអាចប្រែប្រួលតាមពេលវេលាជាក់ស្តែង',
     JP: 'オッズは変動することがありますので、ご注意ください。',
-    IN: '',
+    IN: 'समय-समय पर ऑड्स भिन्न हो सकती हैं।',
+}
+
+const localizedTNCs = {
+    EN: 'Terms &amp; Conditions apply',
+    CN: '规则与条款适用。',
+    VN: 'Điều Khoản và Điều Kiện áp dụng',
+    TH: 'ข้อกำหนดและ เงื่อนไขบังคับใช้',
+    KR: '이용약관이 적용됩니다',
+    ID: 'Syarat dan Kondisi berlaku.',
+    KH: 'លក្ខន្តិកៈត្រូវបានអនុវត្ត',
+    JP: '利用規約が適用されます。',
+    IN: 'नियम और शर्तें',
 }
