@@ -53,10 +53,7 @@ const regionInputFieldList = {
                         <textarea id="encn-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="zhcn-desc-input" placeholder="ZH Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="cn-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="cn-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="cn-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="cn-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -74,10 +71,7 @@ const regionInputFieldList = {
                         <textarea id="envn-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="vivn-desc-input" placeholder="VN Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="vn-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="vn-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="vn-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="vn-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -95,10 +89,7 @@ const regionInputFieldList = {
                         <textarea id="enth-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="thth-desc-input" placeholder="TH Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="th-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="th-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="th-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="th-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -116,10 +107,7 @@ const regionInputFieldList = {
                         <textarea id="enkr-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="kokr-desc-input" placeholder="KR Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="kr-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="kr-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="kr-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="kr-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -137,10 +125,7 @@ const regionInputFieldList = {
                         <textarea id="enid-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="idid-desc-input" placeholder="ID Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="id-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="id-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="id-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="id-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -158,10 +143,7 @@ const regionInputFieldList = {
                         <textarea id="enkh-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="kmkh-desc-input" placeholder="KH Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="kh-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="kh-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="kh-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="kh-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -179,10 +161,7 @@ const regionInputFieldList = {
                         <textarea id="enjp-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="jajp-desc-input" placeholder="JP Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="jp-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="jp-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="jp-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="jp-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -200,10 +179,7 @@ const regionInputFieldList = {
                         <textarea id="enin-desc-input" placeholder="Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                         <textarea id="hiin-desc-input" placeholder="IN Description" class="rounded-[4px] p-2 h-20 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off"></textarea>
                     </div>
-                    <div class="cta flex flex-row gap-x-2">
-                        <input id="in-link-input" type="text" placeholder="CTA Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                        <input id="in-alt-link-input" type="text" placeholder="CTA Alternative Link" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                    </div>
+                    <input id="in-link-input" type="text" placeholder="CTA Link" class="cta rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                 </div>
                 <div class="tl flex flex-row gap-x-2">
                     <input id="in-link-1-input" type="text" placeholder="Link 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
@@ -234,4 +210,16 @@ const localizedTNCs = {
     KH: 'លក្ខន្តិកៈត្រូវបានអនុវត្ត',
     JP: '利用規約が適用されます。',
     IN: 'नियम और शर्तें',
+}
+
+const buttonText = {
+    //[Eng, CN, VN, TH, KR, ID, KH, JP, IN]
+    moreInfo: ['MORE INFO', '优惠详情', 'CHI TIẾT', 'อ่านเพิ่มเติม', '더 보기', 'INFO LENGKAP', 'ព័ត៌មានបន្ថែម', '詳細', 'अधिक जानकारी'],
+    playNow: ['PLAY NOW', '立即游戏', 'CHƠI NGAY', 'เล่นเลย', '지금 플레이', 'MAIN SEKARANG', 'លេងឥឡូវនេះ', '今すぐプレー', 'अभी खेलें'],
+    viewOdds: ['VIEW ODDS', '查看赔率', 'XEM CƯỢC', 'ดูราคาที่นี่', '배당 보기', 'LIHAT ODDS', 'មើលហាងឆេង', 'オッズを見る', 'संभावनाएँ देखें'],
+    betNow: ['BET NOW', '立即投注', 'CƯỢC NGAY', 'ดูราคาที่นี่', '지금 베팅하기', 'TARUHAN SEKARANG', 'ភ្នាល់ឥឡូវនេះ', '今すぐベット', 'अभी बेट करो'],
+    joinNow: ['JOIN NOW', '立即加入', 'THAM GIA NGAY', 'เข้าร่วมตอนนี้', '지금 참여', 'KLAIM SEKARANG', 'ចូលរួមឥឡូវនេះ', '今すぐ申請', 'शामिल हों'],
+    tryNow: ['TRY NOW', '立即投注', 'THỬ NGAY', 'ลองเลย', '지금 플레이 해보세요', 'COBA SEKARANG', 'សាកល្បងឥឡូវនេះ', '今すぐやってみて下さい', 'अभी ट्राई करे'],
+    depositNow: ['DEPOSIT NOW', '立即存款', 'GỬI TIỀN NGAY', 'ฝากเงินตอนนี้', '지금 입금하세요', 'DEPOSIT SEKARANG', 'ដាក់ប្រាក់ឥឡូវនេះ', '今すぐ入金', 'अभी डिपाजिट करें'],
+    watchNow: ['WATCH NOW', '观看视频', 'VN WATCH NOW', 'ดูวิดีโอ', '비디오 보기', 'LIHAT VIDEO', 'មើលវីដេអូ', '動画を見る', 'वीडियो देखें'],
 }
