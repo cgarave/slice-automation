@@ -35,98 +35,130 @@ inputContainer.innerHTML = regionInputFieldList.CN
 
 //List of input fields
 let encnTitle = document.getElementById('encn-title-input');
+let encnMobileTitle = document.getElementById('encn-mobile-title-input');
 let zhcnTitle = document.getElementById('zhcn-title-input');
+let zhcnMobileTitle = document.getElementById('zhcn-mobile-title-input');
 let encnDescription = document.getElementById('encn-desc-input');
+let encnMobileDescription = document.getElementById('encn-mobile-desc-input');
 let zhcnDescription = document.getElementById('zhcn-desc-input');
+let zhcnMobileDescription = document.getElementById('zhcn-mobile-desc-input');
 let cnLink = document.getElementById('cn-link-input');
 let cnLink1 = document.getElementById('cn-link-1-input');
 let cnLink2 = document.getElementById('cn-link-2-input');
 
 let envnTitle = document.getElementById('envn-title-input');
+let envnMobileTitle = document.getElementById('envn-mobile-title-input');
 let vivnTitle = document.getElementById('vivn-title-input');
+let vivnMobileTitle = document.getElementById('vivn-mobile-title-input');
 let envnDescription = document.getElementById('envn-desc-input');
+let envnMobileDescription = document.getElementById('envn-mobile-desc-input');
 let vivnDescription = document.getElementById('vivn-desc-input');
+let vivnMobileDescription = document.getElementById('vivn-mobile-desc-input');
 let vnLink = document.getElementById('vn-link-input');
 let vnLink1 = document.getElementById('vn-link-1-input');
 let vnLink2 = document.getElementById('vn-link-2-input');
 
 let enthTitle = document.getElementById('enth-title-input');
+let enthMobileTitle = document.getElementById('enth-mobile-title-input');
 let ththTitle = document.getElementById('thth-title-input');
+let ththMobileTitle = document.getElementById('thth-mobile-title-input');
 let enthDescription = document.getElementById('enth-desc-input');
+let enthMobileDescription = document.getElementById('enth-mobile-desc-input');
 let ththDescription = document.getElementById('thth-desc-input');
+let ththMobileDescription = document.getElementById('thth-mobile-desc-input');
 let thLink = document.getElementById('th-link-input');
 let thLink1 = document.getElementById('th-link-1-input');
 let thLink2 = document.getElementById('th-link-2-input');
 
 let enkrTitle = document.getElementById('enkr-title-input');
+let enkrMobileTitle = document.getElementById('enkr-mobile-title-input');
 let kokrTitle = document.getElementById('kokr-title-input');
+let kokrMobileTitle = document.getElementById('kokr-mobile-title-input');
 let enkrDescription = document.getElementById('enkr-desc-input');
+let enkrMobileDescription = document.getElementById('enkr-mobile-desc-input');
 let kokrDescription = document.getElementById('kokr-desc-input');
+let kokrMobileDescription = document.getElementById('kokr-mobile-desc-input');
 let krLink = document.getElementById('kr-link-input');
 let krLink1 = document.getElementById('kr-link-1-input');
 let krLink2 = document.getElementById('kr-link-2-input');
 
 let enidTitle = document.getElementById('enid-title-input');
+let enidMobileTitle = document.getElementById('enid-mobile-title-input');
 let ididTitle = document.getElementById('idid-title-input');
+let ididMobileTitle = document.getElementById('idid-mobile-title-input');
 let enidDescription = document.getElementById('enid-desc-input');
+let enidMobileDescription = document.getElementById('enid-mobile-desc-input');
 let ididDescription = document.getElementById('idid-desc-input');
+let ididMobileDescription = document.getElementById('idid-mobile-desc-input');
 let idLink = document.getElementById('id-link-input');
 let idLink1 = document.getElementById('id-link-1-input');
 let idLink2 = document.getElementById('id-link-2-input');
 
 let enkhTitle = document.getElementById('enkh-title-input');
+let enkhMobileTitle = document.getElementById('enkh-mobile-title-input');
 let kmkhTitle = document.getElementById('kmkh-title-input');
+let kmkhMobileTitle = document.getElementById('kmkh-mobile-title-input');
 let enkhDescription = document.getElementById('enkh-desc-input');
+let enkhMobileDescription = document.getElementById('enkh-mobile-desc-input');
 let kmkhDescription = document.getElementById('kmkh-desc-input');
+let kmkhMobileDescription = document.getElementById('kmkh-mobile-desc-input');
 let khLink = document.getElementById('kh-link-input');
 let khLink1 = document.getElementById('kh-link-1-input');
 let khLink2 = document.getElementById('kh-link-2-input');
 
 let enjpTitle = document.getElementById('enjp-title-input');
+let enjpMobileTitle = document.getElementById('enjp-mobile-title-input');
 let jajpTitle = document.getElementById('jajp-title-input');
+let jajpMobileTitle = document.getElementById('jajp-mobile-title-input');
 let enjpDescription = document.getElementById('enjp-desc-input');
+let enjpMobileDescription = document.getElementById('enjp-mobile-desc-input');
 let jajpDescription = document.getElementById('jajp-desc-input');
+let jajpMobileDescription = document.getElementById('jajp-mobile-desc-input');
 let jpLink = document.getElementById('jp-link-input');
 let jpLink1 = document.getElementById('jp-link-1-input');
 let jpLink2 = document.getElementById('jp-link-2-input');
 
 let eninTitle = document.getElementById('enin-title-input');
+let eninMobileTitle = document.getElementById('enin-mobile-title-input');
 let hiinTitle = document.getElementById('hiin-title-input');
+let hiinMobileTitle = document.getElementById('hiin-mobile-title-input');
 let eninDescription = document.getElementById('enin-desc-input');
+let eninMobileDescription = document.getElementById('enin-mobile-desc-input');
 let hiinDescription = document.getElementById('hiin-desc-input');
+let hiinMobileDescription = document.getElementById('hiin-mobile-desc-input');
 let inLink = document.getElementById('in-link-input');
 let inLink1 = document.getElementById('in-link-1-input');
 let inLink2 = document.getElementById('in-link-2-input');
 
 promoCode.addEventListener('input', () => {
     findSelectedRegion();
-    controlPreview(sliceTypeList.value);
+    controlPreview(sliceTypeList.value, selectedRegion);
     controlCtaText(selectedRegion)
-    handleInputs(selectedRegion)
-    controlTnc(selectedRegion)
-    updateCode();
+    handleInputs(sliceTypeList.value, selectedRegion)
+    bannerTypeList.value === 'promotion' ? controlTnc(selectedRegion) : console.log('generic');
+    updateCode(sliceTypeList.value);
 })
 bannerTypeList.addEventListener('change', () => {
     findSelectedRegion();
-    controlPreview(sliceTypeList.value)
-    controlCtaText(selectedRegion)
-    handleInputs(selectedRegion)
-    controlTnc(selectedRegion)
-    updateCode();
+    controlPreview(sliceTypeList.value, selectedRegion);
+    controlCtaText(selectedRegion);
+    handleInputs(sliceTypeList.value, selectedRegion);
+    bannerTypeList.value === 'promotion' ? controlTnc(selectedRegion) : console.log('generic');
+    updateCode(sliceTypeList.value);
 })
 requestorList.addEventListener('change', () => {
-    updateCode();
+    updateCode(sliceTypeList.value);
 })
 ctaLinkList.addEventListener('change', () => {
-    updateCode();
+    updateCode(sliceTypeList.value);
 })
 ctaTextList.addEventListener('change', () => {
     findSelectedRegion();
-    controlPreview(sliceTypeList.value);
+    controlPreview(sliceTypeList.value, selectedRegion);
     controlCtaText(selectedRegion);
-    handleInputs(selectedRegion);
-    controlTnc(selectedRegion);
-    updateCode();
+    handleInputs(sliceTypeList.value, selectedRegion);
+    bannerTypeList.value === 'promotion' ? controlTnc(selectedRegion) : console.log('generic');
+    updateCode(sliceTypeList.value);
 })
 
 //Select region button listener
@@ -139,10 +171,11 @@ regionList.forEach(region => {
         region.classList.add('outline');
 
         controlInputs(sliceTypeList.value, e.target.id);
+        controlPreview(sliceTypeList.value, e.target.id);
         controlCtaText(e.target.id)
-        handleInputs(e.target.id)
-        controlTnc(e.target.id)
-        updateCode();
+        handleInputs(sliceTypeList.value, e.target.id)
+        bannerTypeList.value === 'promotion' ? controlTnc(e.target.id) : console.log('generic');
+        updateCode(sliceTypeList.value);
     })
 })
 
@@ -150,9 +183,10 @@ regionList.forEach(region => {
 sliceTypeList.addEventListener('change', () => {
 
     findSelectedRegion();
-    controlPreview(sliceTypeList.value);
+    controlPreview(sliceTypeList.value, selectedRegion);
     controlInputs(sliceTypeList.value, selectedRegion)
     controlCtaText(selectedRegion)
+    updateCode(sliceTypeList.value);
 })
 
 //Open CP button listener
@@ -294,10 +328,7 @@ function controlInputs(sliceType, region) {
 }
 
 //Function that controls the preview section
-function controlPreview(sliceType) {
-
-    desktopPreviewContainer.innerHTML = desktopBanner; 
-    mobilePreviewContainer.innerHTML = mobileBanner;
+function controlPreview(sliceType, region) {
 
     let date = promoCode.value.slice(-4);
     let month = date.slice(0, 2);
@@ -305,13 +336,83 @@ function controlPreview(sliceType) {
     let monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let folder_date = `20${year}-${month}-` + (monthName[month - 1]);
 
-    //Desktop Preview
-    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
-    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+    switch(sliceType) {
+        case 'HB':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
 
-    //Mobile Preview
-    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
-    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            break;
+        
+        case 'HVB':
+            desktopPreviewContainer.innerHTML = desktopVideoBanner; 
+            mobilePreviewContainer.innerHTML = mobileVideoBanner; 
+            document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.mp4`
+            document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.mp4`
+            document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.mp4`
+            document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.mp4`
+            break;
+
+        case 'RHB':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            switch(region) {
+                case 'CN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'VN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'TH':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'KR':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'ID':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'KH':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'JP':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_1280x720-${promoCode.value}.webp`;
+                    break;
+                case 'IN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    break;
+            }
+            break;
+    }
 
 }
 
@@ -623,347 +724,443 @@ function controlCtaText(region) {
     }
 }
 
-function handleInputs(region) {
+function handleInputs(sliceType, region) {
 
     switch(region){
         case 'CN':
             //Title
             document.getElementById('en-desktop-title').innerHTML = encnTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = encnTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = encnMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = zhcnTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = zhcnTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = zhcnMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = encnDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = encnDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = encnMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = zhcnDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = zhcnDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = zhcnMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = cnLink.value;
             document.getElementById('local-desktop-button').href = cnLink.value;
 
             encnTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = encnTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = encnTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            encnMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = encnMobileTitle.value;
+                updateCode(sliceType);
             })
             zhcnTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = zhcnTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = zhcnTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            zhcnMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = zhcnMobileTitle.value;
+                updateCode(sliceType);
             })
             encnDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = encnDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = encnDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            encnMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = encnMobileDescription.value;
+                updateCode(sliceType);
             })
             zhcnDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = zhcnDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = zhcnDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            zhcnMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = zhcnMobileDescription.value;
+                updateCode(sliceType);
             })
             cnLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = cnLink.value;
                 document.getElementById('local-desktop-button').href = cnLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'VN':
             //Title
             document.getElementById('en-desktop-title').innerHTML = envnTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = envnTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = envnMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = vivnTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = vivnTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = vivnMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = envnDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = envnDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = envnMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = vivnDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = vivnDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = vivnMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = vnLink.value;
             document.getElementById('local-desktop-button').href = vnLink.value;
 
             envnTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = envnTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = envnTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            envnMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = envnMobileTitle.value;
+                updateCode(sliceType);
             })
             vivnTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = vivnTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = vivnTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            vivnMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = vivnMobileTitle.value;
+                updateCode(sliceType);
             })
             envnDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = envnDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = envnDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            envnMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = envnMobileDescription.value;
+                updateCode(sliceType);
             })
             vivnDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = vivnDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = vivnDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            vivnMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = vivnMobileDescription.value;
+                updateCode(sliceType);
             })
             vnLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = vnLink.value;
                 document.getElementById('local-desktop-button').href = vnLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'TH':
             //Title
             document.getElementById('en-desktop-title').innerHTML = enthTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = enthTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = enthMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = ththTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = ththTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = ththMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = enthDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = enthDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = enthMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = ththDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = ththDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = ththMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = thLink.value;
             document.getElementById('local-desktop-button').href = thLink.value;
 
             enthTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = enthTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = enthTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enthMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = enthMobileTitle.value;
+                updateCode(sliceType);
             })
             ththTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = ththTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = ththTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            ththMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = ththMobileTitle.value;
+                updateCode(sliceType);
             })
             enthDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = enthDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = enthDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enthMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = enthMobileDescription.value;
+                updateCode(sliceType);
             })
             ththDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = ththDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = ththDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            ththMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = ththMobileDescription.value;
+                updateCode(sliceType);
             })
             thLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = thLink.value;
                 document.getElementById('local-desktop-button').href = thLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
         
         case 'KR':
             //Title
             document.getElementById('en-desktop-title').innerHTML = enkrTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = enkrTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = enkrMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = kokrTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = kokrTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = kokrMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = enkrDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = enkrDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = enkrMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = kokrDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = kokrDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = kokrMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = krLink.value;
             document.getElementById('local-desktop-button').href = krLink.value;
 
             enkrTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = enkrTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = enkrTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enkrMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = enkrMobileTitle.value;
+                updateCode(sliceType);
             })
             kokrTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = kokrTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = kokrTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            kokrMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = kokrMobileTitle.value;
+                updateCode(sliceType);
             })
             enkrDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = enkrDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = enkrDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enkrMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = enkrMobileDescription.value;
+                updateCode(sliceType);
             })
             kokrDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = kokrDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = kokrDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            kokrMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = kokrMobileDescription.value;
+                updateCode(sliceType);
             })
             krLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = krLink.value;
                 document.getElementById('local-desktop-button').href = krLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'ID':
             //Title
             document.getElementById('en-desktop-title').innerHTML = enidTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = enidTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = enidMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = ididTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = ididTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = ididMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = enidDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = enidDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = enidMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = ididDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = ididDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = ididMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = idLink.value;
             document.getElementById('local-desktop-button').href = idLink.value;
 
             enidTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = enidTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = enidTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enidMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = enidMobileTitle.value;
+                updateCode(sliceType);
             })
             ididTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = ididTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = ididTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            ididMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = ididMobileTitle.value;
+                updateCode(sliceType);
             })
             enidDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = enidDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = enidDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enidMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = enidMobileDescription.value;
+                updateCode(sliceType);
             })
             ididDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = ididDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = ididDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            ididMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = ididMobileDescription.value;
+                updateCode(sliceType);
             })
             idLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = idLink.value;
                 document.getElementById('local-desktop-button').href = idLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'KH':
             //Title
             document.getElementById('en-desktop-title').innerHTML = enkhTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = enkhTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = enkhMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = kmkhTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = kmkhTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = kmkhMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = enkhDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = enkhDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = enkhMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = kmkhDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = kmkhDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = kmkhMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = khLink.value;
             document.getElementById('local-desktop-button').href = khLink.value;
 
             enkhTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = enkhTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = enkhTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enkhMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = enkhMobileTitle.value;
+                updateCode(sliceType);
             })
             kmkhTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = kmkhTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = kmkhTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            kmkhMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = kmkhMobileTitle.value;
+                updateCode(sliceType);
             })
             enkhDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = enkhDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = enkhDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enkhMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = enkhMobileDescription.value;
+                updateCode(sliceType);
             })
             kmkhDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = kmkhDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = kmkhDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            kmkhMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = kmkhMobileDescription.value;
+                updateCode(sliceType);
             })
             khLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = khLink.value;
                 document.getElementById('local-desktop-button').href = khLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'JP':
             //Title
             document.getElementById('en-desktop-title').innerHTML = enjpTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = enjpTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = enjpMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = jajpTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = jajpTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = jajpMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = enjpDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = enjpDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = enjpMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = jajpDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = jajpDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = jajpMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = jpLink.value;
             document.getElementById('local-desktop-button').href = jpLink.value;
 
             enjpTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = enjpTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = enjpTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enjpMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = enjpMobileTitle.value;
+                updateCode(sliceType);
             })
             jajpTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = jajpTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = jajpTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            jajpMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = jajpMobileTitle.value;
+                updateCode(sliceType);
             })
             enjpDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = enjpDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = enjpDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            enjpMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = enjpMobileDescription.value;
+                updateCode(sliceType);
             })
             jajpDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = jajpDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = jajpDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            jajpMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = jajpMobileDescription.value;
+                updateCode(sliceType);
             })
             jpLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = jpLink.value;
                 document.getElementById('local-desktop-button').href = jpLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
 
         case 'IN':
             //Title
             document.getElementById('en-desktop-title').innerHTML = eninTitle.value;
-            document.getElementById('en-mobile-title').innerHTML = eninTitle.value;
+            document.getElementById('en-mobile-title').innerHTML = eninMobileTitle.value;
             document.getElementById('local-desktop-title').innerHTML = hiinTitle.value;
-            document.getElementById('local-mobile-title').innerHTML = hiinTitle.value;
+            document.getElementById('local-mobile-title').innerHTML = hiinMobileTitle.value;
             //Description
             document.getElementById('en-desktop-desc').innerHTML = eninDescription.value;
-            document.getElementById('en-mobile-desc').innerHTML = eninDescription.value;
+            document.getElementById('en-mobile-desc').innerHTML = eninMobileDescription.value;
             document.getElementById('local-desktop-desc').innerHTML = hiinDescription.value;
-            document.getElementById('local-mobile-desc').innerHTML = hiinDescription.value;
+            document.getElementById('local-mobile-desc').innerHTML = hiinMobileDescription.value;
             //Link
             document.getElementById('en-desktop-button').href = inLink.value;
             document.getElementById('local-desktop-button').href = inLink.value;
 
             eninTitle.addEventListener('input', () => {
                 document.getElementById('en-desktop-title').innerHTML = eninTitle.value;
-                document.getElementById('en-mobile-title').innerHTML = eninTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            eninMobileTitle.addEventListener('input', () => {
+                document.getElementById('en-mobile-title').innerHTML = eninMobileTitle.value;
+                updateCode(sliceType);
             })
             hiinTitle.addEventListener('input', () => {
                 document.getElementById('local-desktop-title').innerHTML = hiinTitle.value;
-                document.getElementById('local-mobile-title').innerHTML = hiinTitle.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            hiinMobileTitle.addEventListener('input', () => {
+                document.getElementById('local-mobile-title').innerHTML = hiinMobileTitle.value;
+                updateCode(sliceType);
             })
             eninDescription.addEventListener('input', () => {
                 document.getElementById('en-desktop-desc').innerHTML = eninDescription.value;
-                document.getElementById('en-mobile-desc').innerHTML = eninDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            eninMobileDescription.addEventListener('input', () => {
+                document.getElementById('en-mobile-desc').innerHTML = eninMobileDescription.value;
+                updateCode(sliceType);
             })
             hiinDescription.addEventListener('input', () => {
                 document.getElementById('local-desktop-desc').innerHTML = hiinDescription.value;
-                document.getElementById('local-mobile-desc').innerHTML = hiinDescription.value;
-                updateCode();
+                updateCode(sliceType);
+            })
+            hiinMobileDescription.addEventListener('input', () => {
+                document.getElementById('local-mobile-desc').innerHTML = hiinMobileDescription.value;
+                updateCode(sliceType);
             })
             inLink.addEventListener('input', () => {
                 document.getElementById('en-desktop-button').href = inLink.value;
                 document.getElementById('local-desktop-button').href = inLink.value;
-                updateCode();
+                updateCode(sliceType);
             })
             break;
     }
 }
-handleInputs(selectedRegion)
+// handleInputs(selectedRegion)
 
 function controlTnc(region){
 
