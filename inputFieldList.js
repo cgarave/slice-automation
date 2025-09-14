@@ -18,7 +18,7 @@ const matchBannerInput = `<div id="mb-input-container" class="flex flex-col gap-
                                         <option value="handicap">Handicap</option>
                                     </select>
                                 </div>
-                                <div class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500">
+                                <div class="bg-neutral-900 text-white font-semibold rounded-[4px] px-2 text-xs border border-neutral-500 hidden">
                                     <select id="odds-type-2" class="bg-neutral-900 border-none outline-none w-30 h-full hover:cursor-pointer">
                                         <option value="#">Select Odds 2</option>
                                         <option value="ou">Over/Under</option>
@@ -38,7 +38,7 @@ const matchBannerInput = `<div id="mb-input-container" class="flex flex-col gap-
                             <div class="flex flex-row gap-x-2">
                                 <input id="competition-code" type="text" placeholder="Competition Code" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
                                 <input id="match-code-1" type="text" placeholder="Match Code 1" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
-                                <input id="match-code-2" type="text" placeholder="Match Code 2" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black" autocomplete="off">
+                                <input id="match-code-2" type="text" placeholder="Match Code 2" class="rounded-[4px] p-2 h-10 w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black hidden" autocomplete="off">
                             </div>
                         </div>`
 
@@ -286,4 +286,12 @@ const buttonText = {
     tryNow: ['TRY NOW', '立即投注', 'THỬ NGAY', 'ลองเลย', '지금 플레이 해보세요', 'COBA SEKARANG', 'សាកល្បងឥឡូវនេះ', '今すぐやってみて下さい', 'अभी ट्राई करे'],
     depositNow: ['DEPOSIT NOW', '立即存款', 'GỬI TIỀN NGAY', 'ฝากเงินตอนนี้', '지금 입금하세요', 'DEPOSIT SEKARANG', 'ដាក់ប្រាក់ឥឡូវនេះ', '今すぐ入金', 'अभी डिपाजिट करें'],
     watchNow: ['WATCH NOW', '观看视频', 'VN WATCH NOW', 'ดูวิดีโอ', '비디오 보기', 'LIHAT VIDEO', 'មើលវីដេអូ', '動画を見る', 'वीडियो देखें'],
+}
+
+const products = {
+    live: 'live',
+    casino: 'casino',
+    lotto: 'lotto',
+    chess: 'chess',
+    esports: 'esports'
 }

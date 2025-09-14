@@ -43,6 +43,7 @@ let encnMobileDescription = document.getElementById('encn-mobile-desc-input');
 let zhcnDescription = document.getElementById('zhcn-desc-input');
 let zhcnMobileDescription = document.getElementById('zhcn-mobile-desc-input');
 let cnLink = document.getElementById('cn-link-input');
+cnLink.value = '`/${gv.lan}/`'
 let cnLink1 = document.getElementById('cn-link-1-input');
 let cnLink2 = document.getElementById('cn-link-2-input');
 
@@ -55,6 +56,7 @@ let envnMobileDescription = document.getElementById('envn-mobile-desc-input');
 let vivnDescription = document.getElementById('vivn-desc-input');
 let vivnMobileDescription = document.getElementById('vivn-mobile-desc-input');
 let vnLink = document.getElementById('vn-link-input');
+vnLink.value = '`/${gv.lan}/`'
 let vnLink1 = document.getElementById('vn-link-1-input');
 let vnLink2 = document.getElementById('vn-link-2-input');
 
@@ -67,6 +69,7 @@ let enthMobileDescription = document.getElementById('enth-mobile-desc-input');
 let ththDescription = document.getElementById('thth-desc-input');
 let ththMobileDescription = document.getElementById('thth-mobile-desc-input');
 let thLink = document.getElementById('th-link-input');
+thLink.value = '`/${gv.lan}/`'
 let thLink1 = document.getElementById('th-link-1-input');
 let thLink2 = document.getElementById('th-link-2-input');
 
@@ -79,6 +82,7 @@ let enkrMobileDescription = document.getElementById('enkr-mobile-desc-input');
 let kokrDescription = document.getElementById('kokr-desc-input');
 let kokrMobileDescription = document.getElementById('kokr-mobile-desc-input');
 let krLink = document.getElementById('kr-link-input');
+krLink.value = '`/${gv.lan}/`'
 let krLink1 = document.getElementById('kr-link-1-input');
 let krLink2 = document.getElementById('kr-link-2-input');
 
@@ -91,6 +95,7 @@ let enidMobileDescription = document.getElementById('enid-mobile-desc-input');
 let ididDescription = document.getElementById('idid-desc-input');
 let ididMobileDescription = document.getElementById('idid-mobile-desc-input');
 let idLink = document.getElementById('id-link-input');
+idLink.value = '`/${gv.lan}/`'
 let idLink1 = document.getElementById('id-link-1-input');
 let idLink2 = document.getElementById('id-link-2-input');
 
@@ -103,6 +108,7 @@ let enkhMobileDescription = document.getElementById('enkh-mobile-desc-input');
 let kmkhDescription = document.getElementById('kmkh-desc-input');
 let kmkhMobileDescription = document.getElementById('kmkh-mobile-desc-input');
 let khLink = document.getElementById('kh-link-input');
+khLink.value = '`/${gv.lan}/`'
 let khLink1 = document.getElementById('kh-link-1-input');
 let khLink2 = document.getElementById('kh-link-2-input');
 
@@ -115,6 +121,7 @@ let enjpMobileDescription = document.getElementById('enjp-mobile-desc-input');
 let jajpDescription = document.getElementById('jajp-desc-input');
 let jajpMobileDescription = document.getElementById('jajp-mobile-desc-input');
 let jpLink = document.getElementById('jp-link-input');
+jpLink.value = '`/${gv.lan}/`'
 let jpLink1 = document.getElementById('jp-link-1-input');
 let jpLink2 = document.getElementById('jp-link-2-input');
 
@@ -127,8 +134,20 @@ let eninMobileDescription = document.getElementById('enin-mobile-desc-input');
 let hiinDescription = document.getElementById('hiin-desc-input');
 let hiinMobileDescription = document.getElementById('hiin-mobile-desc-input');
 let inLink = document.getElementById('in-link-input');
+inLink.value = '`/${gv.lan}/`'
 let inLink1 = document.getElementById('in-link-1-input');
 let inLink2 = document.getElementById('in-link-2-input');
+
+let gameCode = document.getElementById('game-code-input');
+
+let sportType = document.getElementById('sport-type')
+let oddsType1 = document.getElementById('odds-type-1')
+let oddsType2 = document.getElementById('odds-type-2')
+let team1Shirt = document.getElementById('team-1-shirt')
+let team2Shirt = document.getElementById('team-2-shirt')
+let competitionCode = document.getElementById('competition-code')
+let matchCode1 = document.getElementById('match-code-1')
+let matchCode2 = document.getElementById('match-code-2')
 
 promoCode.addEventListener('input', () => {
     findSelectedRegion();
@@ -411,6 +430,63 @@ function controlPreview(sliceType, region) {
                     document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
                     break;
             }
+            break;
+
+        case 'GL':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            break;
+        
+        case 'MB1':
+            desktopPreviewContainer.innerHTML = desktopMatchBanner; 
+            mobilePreviewContainer.innerHTML = mobileMatchBanner;
+            document.getElementById('odds-type-2').parentElement.classList.add('hidden');
+            document.getElementById('match-code-2').classList.add('hidden');
+            controlOdds(region);
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            break;
+        
+        case 'MB2':
+            desktopPreviewContainer.innerHTML = desktopMatchBanner; 
+            mobilePreviewContainer.innerHTML = mobileMatchBanner;
+            document.getElementById('odds-type-2').parentElement.classList.remove('hidden');
+            document.getElementById('match-code-2').classList.add('hidden');
+            controlOdds(region);
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            break;
+
+        case 'MB3':
+            desktopPreviewContainer.innerHTML = desktopMatchBanner; 
+            mobilePreviewContainer.innerHTML = mobileMatchBanner;
+            document.getElementById('odds-type-2').parentElement.classList.remove('hidden');
+            document.getElementById('match-code-2').classList.remove('hidden');
+            controlOdds(region);
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
             break;
     }
 
@@ -1159,6 +1235,35 @@ function handleInputs(sliceType, region) {
             })
             break;
     }
+    gameCode.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+
+    sportType.addEventListener('change', () => {
+        updateCode(sliceType);
+    })
+    oddsType1.addEventListener('change', () => {
+        updateCode(sliceType);
+    })
+    oddsType2.addEventListener('change', () => {
+        updateCode(sliceType);
+    })
+    team1Shirt.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+    team2Shirt.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+    competitionCode.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+    matchCode1.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+    matchCode2.addEventListener('input', () => {
+        updateCode(sliceType);
+    })
+
 }
 // handleInputs(selectedRegion)
 
@@ -1225,5 +1330,58 @@ function controlTnc(region){
         document.getElementById('local-desktop-tnc').classList.remove('hidden');
         document.getElementById('en-mobile-tnc').classList.remove('hidden');
         document.getElementById('local-mobile-tnc').classList.remove('hidden');
+    }
+}
+
+function controlOdds(region){
+    switch(region) {
+        case 'CN': 
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.CN
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.CN
+            break;
+        case 'VN':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.VN
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.VN
+            break;
+        case 'TH':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.TH
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.TH
+            break;
+        case 'KR':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.KR
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.KR
+            break;
+        case 'ID':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.ID
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.ID
+            break;
+        case 'KH':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.KH
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.KH
+            break;
+        case 'JP':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.JP
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.JP
+            break;
+        case 'IN':
+            document.getElementById('en-desktop-odds').innerHTML = localizedOdds.EN
+            document.getElementById('en-mobile-odds').innerHTML = localizedOdds.EN
+            document.getElementById('local-desktop-odds').innerHTML = localizedOdds.IN
+            document.getElementById('local-mobile-odds').innerHTML = localizedOdds.IN
+            break;
     }
 }
