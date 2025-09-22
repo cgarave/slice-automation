@@ -260,6 +260,22 @@ function controlInputs(sliceType, region) {
             controlAdvertName('OB', region);
             break;
 
+        case 'OVB':
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
+            document.getElementById(region+'-container').classList.remove('hidden');
+            document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
+            document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
+            controlAdvertName('OB', region);
+            break;
+
+        case 'ROB':
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
+            document.getElementById(region+'-container').classList.remove('hidden');
+            document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
+            document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
+            controlAdvertName('OB', region);
+            break;
+
         case 'SIB':
             Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
@@ -443,6 +459,104 @@ function controlPreview(sliceType, region) {
             document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
             document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
             break;
+
+        case 'OB':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}-mobile.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}-mobile.webp`;
+            break;
+        
+        case 'OVB':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}-mobile.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1800x1800-${promoCode.value}-mobile.webp`;
+            break;
+
+        case 'ROB':
+            desktopPreviewContainer.innerHTML = desktopOverlayBanner; 
+            mobilePreviewContainer.innerHTML = mobileOverlayBanner;
+            
+            switch(region) {
+                case 'CN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'VN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-vn_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-vn_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'TH':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'KR':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'ID':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'KH':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kh_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kh_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_1800x1800-${promoCode.value}-mobile.webp`;
+                    console.log(document.getElementById('en-desktop-button').textContent);
+                    
+                    break;
+                case 'JP':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+                case 'IN':
+                    document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-in_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_1800x1800-${promoCode.value}.webp`;
+                    document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-in_1800x1800-${promoCode.value}-mobile.webp`;
+                    document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_1800x1800-${promoCode.value}-mobile.webp`;
+                    break;
+            }
+            break;
+
+        case 'NB':
+            desktopPreviewContainer.innerHTML = desktopBanner; 
+            mobilePreviewContainer.innerHTML = mobileBanner;
+            //Desktop Preview
+            document.getElementById('en-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+            document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/2844x800-${promoCode.value}.webp`;
+
+            //Mobile Preview
+            document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+            document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/1280x720-${promoCode.value}.webp`;
+
+            //Hide buttons
+            document.getElementById('en-desktop-button').classList.toggle('hidden')
+            document.getElementById('local-desktop-button').classList.toggle('hidden')
+            break;
         
         case 'MB1':
             desktopPreviewContainer.innerHTML = desktopMatchBanner; 
@@ -552,248 +666,320 @@ function controlCtaText(region) {
     switch(ctaTextList.value){
         case 'more-info':
             document.getElementById('en-desktop-button').innerHTML = buttonText.moreInfo[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.moreInfo[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.moreInfo[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.moreInfo[8];
                     break;
             }
             break;
 
         case 'play-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.playNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.playNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.playNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.playNow[8];
                     break;
             }
             break;
 
         case 'view-odds':
             document.getElementById('en-desktop-button').innerHTML = buttonText.viewOdds[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.viewOdds[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.viewOdds[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.viewOdds[8];
                     break;
             }
             break;
 
         case 'bet-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.betNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.betNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.betNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.betNow[8];
                     break;
             }
             break;
 
         case 'join-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.joinNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.joinNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.joinNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.joinNow[8];
                     break;
             }
             break;
 
         case 'try-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.tryNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.tryNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.tryNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.tryNow[8];
                     break;
             }
             break;
 
         case 'deposit-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.depositNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.depositNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.depositNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.depositNow[8];
                     break;
             }
             break;
 
         case 'watch-now':
             document.getElementById('en-desktop-button').innerHTML = buttonText.watchNow[0];
+            document.getElementById('en-mobile-button').innerHTML = buttonText.watchNow[0];
 
             switch(region) {
                 case 'CN': 
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[1];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[1];
                     break;
                 case 'VN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[2];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[2];
                     break;
                 case 'TH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[3];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[3];
                     break;
                 case 'KR':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[4];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[4];
                     break;
                 case 'ID':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[5];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[5];
                     break;
                 case 'KH':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[6];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[6];
                     break;
                 case 'JP':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[7];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[7];
                     break;
                 case 'IN':
                     document.getElementById('local-desktop-button').innerHTML = buttonText.watchNow[8];
+                    document.getElementById('local-mobile-button').innerHTML = buttonText.watchNow[8];
                     break;
             }
             break;

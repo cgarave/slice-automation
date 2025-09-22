@@ -140,6 +140,47 @@ let mobileMatchBanner = `<div id="mobile-en-image-container" class="h-fit relati
                         <img id="local-mobile-img" src="" alt="">
                     </div>`
 
+let desktopOverlayBanner = `<div class="flex flex-row gap-x-5">
+                                <div id="desktop-en-image-container" class="h-fit relative rounded-md overflow-hidden max-w-80">
+                                    <div class="absolute bottom-0 p-3 w-full flex flex-col justify-center items-center gap-y-1 bg-linear-to-t from-black from-10% to-100%">
+                                        <h3 id="en-desktop-title" class="text-[14px] font-semibold"></h3>
+                                        <p id="en-desktop-desc" class="text-neutral-400 text-[10px]"></p>
+                                        <a href="" id="en-desktop-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">BUTTON</a>
+                                        <p id="en-desktop-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                    </div>
+                                    <img id="en-desktop-img" src="" alt="">
+                                </div>
+                                <div id="desktop-local-image-container" class="h-fit relative rounded-md overflow-hidden max-w-80">
+                                    <div class="absolute bottom-0 p-3 w-full flex flex-col justify-center items-center gap-y-1 bg-linear-to-t from-black from-10% to-100%">
+                                        <h3 id="local-desktop-title" class="text-[14px] font-semibold"></h3>
+                                        <p id="local-desktop-desc" class="text-neutral-400 text-[10px]"></p>
+                                        <a href="" id="local-desktop-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">BUTTON</a>
+                                        <p id="local-desktop-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                    </div>
+                                    <img id="local-desktop-img" src="" alt="">
+                                </div>
+                            </div>`
+
+
+let mobileOverlayBanner = `<div id="mobile-en-image-container" class="h-fit relative rounded-md overflow-hidden max-w-80">
+                                <div class="absolute bottom-0 p-3 w-full flex flex-col justify-center items-center gap-y-1 bg-linear-to-t from-black from-10% to-100%">
+                                    <h3 id="en-mobile-title" class="text-[14px] font-semibold"></h3>
+                                    <p id="en-mobile-desc" class="text-neutral-400 text-[10px]"></p>
+                                    <a href="" id="en-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">BUTTON</a>
+                                    <p id="en-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                </div>
+                                <img id="en-mobile-img" src="" alt="">
+                            </div>
+                            <div id="mobile-local-image-container" class="h-fit relative rounded-md overflow-hidden max-w-80">
+                                <div class="absolute bottom-0 p-3 w-full flex flex-col justify-center items-center gap-y-1 bg-linear-to-t from-black from-10% to-100%">
+                                    <h3 id="local-mobile-title" class="text-[14px] font-semibold"></h3>
+                                    <p id="local-mobile-desc" class="text-neutral-400 text-[10px]"></p>
+                                    <a href="" id="local-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs">BUTTON</a>
+                                    <p id="local-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                </div>
+                                <img id="local-mobile-img" src="" alt="">
+                            </div>`
+
 
 function updateCode(sliceType){
 
@@ -659,6 +700,147 @@ function updateCode(sliceType){
                 </GameLauncher>
             </swiper-slide>`
             }
+            break;
+
+        case 'OB':
+            enCodeContainer.textContent = `<SwiperSlide>
+  <SSplashBanner
+    class="h-full apd-splash-gradient-dark" content-position="bottom"
+      :img-url="breakpoints.smAndUp 
+      ? '${document.getElementById('en-desktop-img').src}' 
+      : '${document.getElementById('en-mobile-img').src }'">
+
+    <template #title>
+        <div class="text-h5 font-bold line-clamp-4 hidden md:block">${document.getElementById('en-desktop-title').innerHTML}</div>
+        <div class="text-h5 font-bold line-clamp-4 md:hidden">${document.getElementById('en-mobile-title').innerHTML}</div>
+    </template>
+    
+    <template #subtitle>
+        <div class="text-body-1 mb-6 hidden md:block">${document.getElementById('en-desktop-desc').innerHTML}</div>
+        <div class="text-body-1 mb-6 md:hidden">${document.getElementById('en-mobile-desc').innerHTML}</div>
+    </template>   
+
+    <template #actions>
+      <SButton color="primary--darken-5" :href="${document.getElementById('en-desktop-button').getAttribute('href')}">${document.getElementById('en-desktop-button').textContent}</SButton>
+    </template>
+<template #tnc>${document.getElementById('en-desktop-tnc').innerHTML}</template>
+  </SSplashBanner>
+</SwiperSlide>`
+
+            localCodeContainer.textContent = `<SwiperSlide>
+  <SSplashBanner
+    class="h-full apd-splash-gradient-dark" content-position="bottom"
+      :img-url="breakpoints.smAndUp 
+      ? '${document.getElementById('local-desktop-img').src}' 
+      : '${document.getElementById('local-mobile-img').src }'">
+
+    <template #title>
+        <div class="text-h5 font-bold line-clamp-4 hidden md:block">${document.getElementById('local-desktop-title').innerHTML}</div>
+        <div class="text-h5 font-bold line-clamp-4 md:hidden">${document.getElementById('local-mobile-title').innerHTML}</div>
+    </template>
+    
+    <template #subtitle>
+        <div class="text-body-1 mb-6 hidden md:block">${document.getElementById('local-desktop-desc').innerHTML}</div>
+        <div class="text-body-1 mb-6 md:hidden">${document.getElementById('local-mobile-desc').innerHTML}</div>
+    </template>      
+
+    <template #actions>
+      <SButton color="primary--darken-5" :href="${document.getElementById('local-desktop-button').getAttribute('href')}">${document.getElementById('local-desktop-button').textContent}</SButton>
+    </template>
+<template #tnc>${document.getElementById('local-desktop-tnc').innerHTML}</template>
+  </SSplashBanner>
+</SwiperSlide>`
+            break;
+
+        case 'ROB':
+            enCodeContainer.textContent = `<SwiperSlide>
+  <SSplashBanner
+    class="h-full apd-splash-gradient-dark" content-position="bottom"
+      :img-url="breakpoints.smAndUp 
+      ? '${document.getElementById('en-desktop-img').src}' 
+      : '${document.getElementById('en-mobile-img').src }'">
+
+    <template #title>
+        <div class="text-h5 font-bold line-clamp-4 hidden md:block">${document.getElementById('en-desktop-title').innerHTML}</div>
+        <div class="text-h5 font-bold line-clamp-4 md:hidden">${document.getElementById('en-mobile-title').innerHTML}</div>
+    </template>
+    
+    <template #subtitle>
+        <div class="text-body-1 mb-6 hidden md:block">${document.getElementById('en-desktop-desc').innerHTML}</div>
+        <div class="text-body-1 mb-6 md:hidden">${document.getElementById('en-mobile-desc').innerHTML}</div>
+    </template>
+
+    <template #actions>
+      <SButton color="primary--darken-5" :href="${document.getElementById('en-desktop-button').getAttribute('href')}">${document.getElementById('en-desktop-button').textContent}</SButton>
+    </template>
+<template #tnc>${document.getElementById('en-desktop-tnc').innerHTML}</template>
+  </SSplashBanner>
+</SwiperSlide>`
+
+            localCodeContainer.textContent = `<SwiperSlide>
+  <SSplashBanner
+    class="h-full apd-splash-gradient-dark" content-position="bottom"
+      :img-url="breakpoints.smAndUp 
+      ? '${document.getElementById('local-desktop-img').src}' 
+      : '${document.getElementById('local-mobile-img').src }'">
+
+    <template #title>
+        <div class="text-h5 font-bold line-clamp-4 hidden md:block">${document.getElementById('local-desktop-title').innerHTML}</div>
+        <div class="text-h5 font-bold line-clamp-4 md:hidden">${document.getElementById('local-mobile-title').innerHTML}</div>
+    </template>
+    
+    <template #subtitle>
+        <div class="text-body-1 mb-6 hidden md:block">${document.getElementById('local-desktop-desc').innerHTML}</div>
+        <div class="text-body-1 mb-6 md:hidden">${document.getElementById('local-mobile-desc').innerHTML}</div>
+    </template>
+
+    <template #actions>
+      <SButton color="primary--darken-5" :href="${document.getElementById('local-desktop-button').getAttribute('href')}">${document.getElementById('local-desktop-button').textContent}</SButton>
+    </template>
+<template #tnc>${document.getElementById('local-desktop-tnc').innerHTML}</template>
+  </SSplashBanner>
+</SwiperSlide>`
+            break;
+
+        case 'NB':
+            enCodeContainer.textContent = `<swiper-slide>
+    <SMediaBanner :img-url="breakpoints.smAndUp 
+    ? '${document.getElementById('en-desktop-img').src}' 
+    : '${document.getElementById('en-mobile-img').src }'"
+    title-tag="h1"
+    :data-track-content="breakpoints.smAndDown ? true : undefined"
+    :data-content-name="breakpoints.smAndDown ? 'TV-${promoCode.value} - (${requestorList.value}-BNR)' : undefined"
+    :data-content-piece="breakpoints.smAndDown ? 'TV-${promoCode.value} - BNR ${ctaLinkList.value} - (${requestorList.value}-BNR)' : undefined">
+        <template #title>
+            <div class="hidden md:block">${document.getElementById('en-desktop-title').innerHTML}</div>
+            <div class="md:hidden">${document.getElementById('en-mobile-title').innerHTML}</div>
+        </template>
+        
+        <template #subtitle>
+            <div class="hidden md:block">${document.getElementById('en-desktop-desc').innerHTML}</div>
+            <div class="md:hidden">${document.getElementById('en-mobile-desc').innerHTML}</div>
+        </template>          
+    </SMediaBanner>
+</swiper-slide>`;
+            localCodeContainer.textContent = `<swiper-slide>
+    <SMediaBanner :img-url="breakpoints.smAndUp 
+    ? '${document.getElementById('local-desktop-img').src}' 
+    : '${document.getElementById('local-mobile-img').src }'"
+    title-tag="h1"
+    :data-track-content="breakpoints.smAndDown ? true : undefined"
+    :data-content-name="breakpoints.smAndDown ? 'TV-${promoCode.value} - (${requestorList.value}-BNR)' : undefined"
+    :data-content-piece="breakpoints.smAndDown ? 'TV-${promoCode.value} - BNR ${ctaLinkList.value} - (${requestorList.value}-BNR)' : undefined">
+        <template #title>
+            <div class="hidden md:block">${document.getElementById('local-desktop-title').innerHTML}</div>
+            <div class="md:hidden">${document.getElementById('local-mobile-title').innerHTML}</div>
+        </template>
+        
+        <template #subtitle>
+            <div class="hidden md:block">${document.getElementById('local-desktop-desc').innerHTML}</div>
+            <div class="md:hidden">${document.getElementById('local-mobile-desc').innerHTML}</div>
+        </template>          
+    </SMediaBanner>
+</swiper-slide>`;
             break;
 
         case 'MB1':
