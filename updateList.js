@@ -28,6 +28,7 @@ let mobileBanner = `<div id="mobile-en-image-container" class="h-fit relative ro
                                 <h3 id="en-mobile-title" class="text-[14px] font-semibold"></h3>
                                 <p id="en-mobile-desc" class="text-neutral-400 text-[10px]"></p>
                                 <p id="en-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                <a href="" id="en-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs hidden">BUTTON</a>
                             </div>
                         </div>
                         <img id="en-mobile-img" src="" alt="">
@@ -38,6 +39,7 @@ let mobileBanner = `<div id="mobile-en-image-container" class="h-fit relative ro
                                 <h3 id="local-mobile-title" class="text-[14px] font-semibold"></h3>
                                 <p id="local-mobile-desc" class="text-neutral-400 text-[10px]"></p>
                                 <p id="local-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                <a href="" id="local-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs hidden">BUTTON</a>
                             </div>
                         </div>
                         <img id="local-mobile-img" src="" alt="">
