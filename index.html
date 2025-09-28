@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slice Automation</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
@@ -124,8 +124,14 @@
                 <button id="channel-planner" class="bg-neutral-800 rounded-[4px] p-2 font-medium text-xs text-white cursor-pointer border border-[#ff9200]">Open Channel Planner</button>
                 <button id="create-advert" class="bg-neutral-800 rounded-[4px] p-2 font-medium text-xs text-white cursor-pointer border border-[#ff9200]">Create UAT Advert</button>
             </div>
-            <textarea id="en-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
-            <textarea id="local-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
+            <div id="copyEN" class="relative h-full">
+                <button class="absolute top-3 right-3 bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]" onclick="copyCode(enCodeContainer.textContent)">Copy</button>
+                <textarea id="en-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
+            </div>
+            <div id="copyLocal" class="relative h-full">
+                <button class="absolute top-3 right-3 bg-neutral-800 rounded-[4px] p-3 font-medium text-xs text-white cursor-pointer hover:outline outline-[#ff9200]" onclick="copyCode(localCodeContainer.textContent)">Copy</button>
+                <textarea id="local-code" class="rounded-[4px] p-2 h-full w-full outline-none font-medium text-xs bg-white placeholder:text-gray-500 text-black resize-none" autocomplete="off" disabled></textarea>
+            </div>
         </div>
     </div>
 </body>

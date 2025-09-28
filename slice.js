@@ -209,7 +209,10 @@ sliceTypeList.addEventListener('change', () => {
 })
 
 //Open CP button listener
-channelPlannerBtn.addEventListener('click', () => controlPlannerBtn(selectedRegion));
+channelPlannerBtn.addEventListener('click', () => {
+    findSelectedRegion();
+    controlPlannerBtn(selectedRegion)
+});
 
 //Create UAT advert button
 createAdvertBtn.addEventListener('click', () => createAdvert())

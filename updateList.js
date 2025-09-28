@@ -1065,4 +1065,12 @@ function updateCode(sliceType){
             </swiper-slide>`
             break;
     }
+} 
+
+function copyCode(text){
+    navigator.clipboard.writeText(text)
+    .then(() => alert('Copied!'))
+    .catch(err => console.error('Failed to copy:', err));
 }
+
+
