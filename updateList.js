@@ -78,6 +78,7 @@ let mobileVideoBanner = `<div id="mobile-en-image-container" class="h-fit relati
                                 <h3 id="en-mobile-title" class="text-[14px] font-semibold"></h3>
                                 <p id="en-mobile-desc" class="text-neutral-400 text-[10px]"></p>
                                 <p id="en-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                <a href="" id="en-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs hidden">BUTTON</a>
                             </div>
                         </div>
                         <video muted autoplay loop>
@@ -90,6 +91,7 @@ let mobileVideoBanner = `<div id="mobile-en-image-container" class="h-fit relati
                                 <h3 id="local-mobile-title" class="text-[14px] font-semibold"></h3>
                                 <p id="local-mobile-desc" class="text-neutral-400 text-[10px]"></p>
                                 <p id="local-mobile-tnc" class="text-neutral-400 text-[6px] hidden"></p>
+                                <a href="" id="local-mobile-button" class="mr-4 p-1 text-[10px] font-medium bg-[#FF6A00] rounded-xs hidden">BUTTON</a>
                             </div>
                         </div>
                         <video muted autoplay loop>
@@ -423,6 +425,62 @@ function updateCode(sliceType){
         </template>
         <template #tnc>${document.getElementById('local-desktop-tnc').innerHTML}</template>
     </SMediaBanner>
+</swiper-slide>`;
+            break;
+
+        case 'RVB':
+            
+            enCodeContainer.textContent = `<swiper-slide>
+  <SMediaBanner title-tag="h1" @click="openGame()" :link="${document.getElementById('en-desktop-button').getAttribute('href')}">
+    <template #default>
+      <div class="bg-center bg-no-repeat">
+        <video loop :autoplay="true" muted webkit-playsinline playsinline :src="breakpoints.smAndUp? 
+		'${document.getElementById('en-desktop-video').src}' 
+		:'${document.getElementById('en-mobile-video').src}'"
+		class="absolute object-cover object-center w-full h-full">
+        </video>
+      </div>
+    </template>
+    <template #title>
+        <div class="hidden md:block">${document.getElementById('en-desktop-title').innerHTML}</div>
+        <div class="md:hidden">${document.getElementById('en-mobile-title').innerHTML}</div>
+        </template>
+        
+        <template #subtitle>
+        <div class="hidden md:block">${document.getElementById('en-desktop-desc').innerHTML}</div>
+        <div class="md:hidden">${document.getElementById('en-mobile-desc').innerHTML}</div>
+        </template>
+    <template #actions> 
+        <a class="max-w-full s-button false overflow-hidden relative inline-flex items-center justify-center gap-1 outline-none text-button transition-all duration-300 rounded before:absolute before:bg-current before:color-[inherit] before:inset-0 before:opacity-0 before:pointer-events-none before:rounded-[inherit] hover:before:md:opacity-[.04] focus:before:opacity-[.12] active:before:opacity-[.12] hover:md:shadow-8 h-9 px-4 min-w-16 bg-primary--darken-5 text-light--high hover:text-light--high shadow-2 flex-[0_0_auto]" color="primary--darken-5" :href="${document.getElementById('en-desktop-button').getAttribute('href')}">${document.getElementById('en-desktop-button').textContent}</a> 
+    </template> 
+    <template #tnc>${document.getElementById('en-desktop-tnc').innerHTML}</template>
+  </SMediaBanner>
+</swiper-slide>`;
+            localCodeContainer.textContent = `<swiper-slide>
+  <SMediaBanner title-tag="h1" @click="openGame()" :link="${document.getElementById('local-desktop-button').getAttribute('href')}">
+    <template #default>
+      <div class="bg-center bg-no-repeat">
+        <video loop :autoplay="true" muted webkit-playsinline playsinline :src="breakpoints.smAndUp? 
+		'${document.getElementById('local-desktop-video').src}' 
+		:'${document.getElementById('local-mobile-video').src}'"
+		class="absolute object-cover object-center w-full h-full">
+        </video>
+      </div>
+    </template>
+    <template #title>
+        <div class="hidden md:block">${document.getElementById('local-desktop-title').innerHTML}</div>
+        <div class="md:hidden">${document.getElementById('local-mobile-title').innerHTML}</div>
+        </template>
+        
+        <template #subtitle>
+        <div class="hidden md:block">${document.getElementById('local-desktop-desc').innerHTML}</div>
+        <div class="md:hidden">${document.getElementById('local-mobile-desc').innerHTML}</div>
+        </template>
+    <template #actions> 
+        <a class="max-w-full s-button false overflow-hidden relative inline-flex items-center justify-center gap-1 outline-none text-button transition-all duration-300 rounded before:absolute before:bg-current before:color-[inherit] before:inset-0 before:opacity-0 before:pointer-events-none before:rounded-[inherit] hover:before:md:opacity-[.04] focus:before:opacity-[.12] active:before:opacity-[.12] hover:md:shadow-8 h-9 px-4 min-w-16 bg-primary--darken-5 text-light--high hover:text-light--high shadow-2 flex-[0_0_auto]" color="primary--darken-5" :href="${document.getElementById('local-desktop-button').getAttribute('href')}">${document.getElementById('local-desktop-button').textContent}</a> 
+    </template> 
+    <template #tnc>${document.getElementById('local-desktop-tnc').innerHTML}</template>
+  </SMediaBanner>
 </swiper-slide>`;
             break;
 

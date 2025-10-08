@@ -246,6 +246,14 @@ function controlInputs(sliceType, region) {
             controlAdvertName('H', region);
             break;
 
+         case 'RVB':
+            Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
+            document.getElementById(region+'-container').classList.remove('hidden');
+            document.querySelectorAll('.cta').forEach(cta => {cta.classList.remove('hidden')})
+            document.querySelectorAll('.tl').forEach(tl => {tl.classList.add('hidden')})
+            controlAdvertName('VB', region);
+            break;
+
         case 'GL':
             Array.from(inputContainer.children).forEach(child => {child.classList.add('hidden');});
             document.getElementById(region+'-container').classList.remove('hidden');
@@ -447,6 +455,62 @@ function controlPreview(sliceType, region) {
                     document.getElementById('local-desktop-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_2844x800-${promoCode.value}.webp`;
                     document.getElementById('en-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
                     document.getElementById('local-mobile-img').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-gb_1280x720-${promoCode.value}.webp`;
+                    break;
+            }
+            break;
+
+        case 'RVB':
+            desktopPreviewContainer.innerHTML = desktopVideoBanner; 
+            mobilePreviewContainer.innerHTML = mobileVideoBanner; 
+
+            switch(region){
+                case 'CN':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-cn_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/zh-cn_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'VN':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-vn_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-vn_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/vi-vn_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'TH':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-th_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/th-th_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'KR':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kr_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ko-kr_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'ID':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-id_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/id-id_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'KH':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kh_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-kh_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/km-kh_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'JP':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-jp_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/ja-jp_1280x720-${promoCode.value}.mp4`
+                    break;
+                case 'IN':
+                    document.getElementById('en-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-in_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('local-desktop-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/hi-in_2844x800-${promoCode.value}.mp4`
+                    document.getElementById('en-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/en-in_1280x720-${promoCode.value}.mp4`
+                    document.getElementById('local-mobile-video').src = `https://doc.188contents.com/taptap-content/images/banners/${bannerTypeList.value}/${folder_date}/${promoCode.value}/hi-in_1280x720-${promoCode.value}.mp4`
                     break;
             }
             break;
